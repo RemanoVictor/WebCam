@@ -10,7 +10,6 @@ function start() {
                 {
                     audio: true,
                     video: true
-
                 })
 
             // Success callback
