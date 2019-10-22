@@ -27,21 +27,24 @@ function start() {
                 video.onloadmetadata = function (ev) {
                     video.play();
                 };
-
+                 
                 let start = document.getElementById("startBtn");
                 let stop = document.getElementById("stopBtn");
-                let vidSave = doocument.getElementById("vid2");
-                let mediaRecorder = new mediaRecorder(stream);
+                let vidSave = document.getElementById("vid2");
+                let mediaRecorder = new MediaRecorder(stream);
                 let chunks = [];
 
                 start.addEventListener('click',(ev)=>{
-                    mediaRecorder.start();
                     console.log(mediaRecorder.state);
+                    mediaRecorder.start();
+                    
                 })
                 
                 stop.addEventListener('click',(ev)=>{
-                    mediaRecorder.stop();
                     console.log(mediaRecorder.state);
+                    mediaRecorder.stop();
+                    ev.preventDefault()
+
                 });
 
                 mediaRecorder.ondataavailable = function(ev){
@@ -65,5 +68,8 @@ function start() {
         console.log('getUserMedia not supported on your browser!');
     }
 }
+
+
+
 
 
