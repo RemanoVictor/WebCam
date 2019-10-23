@@ -23,7 +23,7 @@ function start() {
                     video.src = window.URL.createObjectURL(stream);
                 }
 
-                video.onloadmetadata = function (ev) {
+                video.onloadmetadata = function () {
                     video.play();
                 };
                  
@@ -33,7 +33,7 @@ function start() {
                 let mediaRecorder = new MediaRecorder(stream);
                 let chunks = [];
 
-                start.addEventListener('click',(ev)=>{
+                start.addEventListener('click',()=>{
                     console.log(mediaRecorder.state);
                     mediaRecorder.start();
                     
@@ -67,8 +67,3 @@ function start() {
         console.log('getUserMedia not supported on your browser!');
     }
 }
-
-
-
-
-
