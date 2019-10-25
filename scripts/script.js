@@ -34,7 +34,7 @@ function start() {
                 let chunks = [];
 
                 start.addEventListener('click',()=>{
-                    console.log(mediaRecorder.state);
+                    console.log(mediaRecorder.state + "do i even exist?");
                     mediaRecorder.start();
                     
                 })
@@ -67,3 +67,5 @@ function start() {
         console.log('getUserMedia not supported on your browser!');
     }
 }
+
+start();
